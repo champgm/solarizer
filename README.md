@@ -1,5 +1,5 @@
 # solarizer
-A utility which contains the default hexadecimal and RGB values for [solarized](https://ethanschoonover.com/solarized/) color values as well as the ability to convert any RGB color into a solarized-style theme by mimicking the color differences found in the `base` colors.
+A utility which contains the default hexadecimal and RGB values for [Solarized](https://ethanschoonover.com/solarized/) color values as well as the ability to convert any RGB color into a solarized-style theme by mimicking the color differences found in the "Base" colors.
 
 ## Installation
 `npm install --save solarizer`
@@ -9,8 +9,6 @@ Here's an example of how one might create some solarized [react-native-really-aw
 
 ```Typescript
 import { createBasesFromColor, rgb, rgbStrings as bases } from "./colors/Solarizer";
-import { configuration, Recipient } from "./Configuration";
-import { sendEmail } from "./Google";
 
 const blue = createBasesFromColor(rgb.blue, "base01");
 const red = createBasesFromColor(rgb.red, "base01");
@@ -47,9 +45,14 @@ Then later...
 }
 
 ```
+The result will look something like this:
+<img src="https://raw.github.com/champgm/solarizer/master/buttons.png?sanitize=true">
 
 
-## Detail
-By calculating the d
+## Details
+Using an initial color and the known RGB differences between "Base" colors in the Solarized theme:
+<img src="https://raw.github.com/champgm/solarizer/master/solarized.png?sanitize=true">
+We can choose a point in the Base range to use the initial color and then calculate Solarized-esque values for other Base values.
 
-<img src="./solarized.png">
+This is a very naive approach (see [Color Difference](https://en.wikipedia.org/wiki/Color_difference)) but it 
+
