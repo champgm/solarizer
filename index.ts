@@ -1,5 +1,7 @@
 export type RgbColor = [number, number, number];
 
+export type SolarizedBaseNumber = "base03" | "base02" | "base01" | "base00" | "base0" | "base1" | "base2" | "base3";
+
 export interface RgbColorMap {
   yellow: RgbColor;
   orange: RgbColor;
@@ -88,10 +90,9 @@ export const rgbStrings: RgbColorStringMap & RgbBaseStringMap = {
   asRgbMap: () => rgb,
 };
 
-export function createBasesFromColor(
-  nonBaseColor: RgbColor,
-  correspondingBase: "base03" | "base02" | "base01" | "base00" | "base0" | "base1" | "base2" | "base3",
-): RgbBaseStringMap {
+export function createBasesFromColor(nonBaseColor: string, correspondingBase: SolarizedBaseNumber): RgbBaseStringMap;
+export function createBasesFromColor(nonBaseColor: RgbColor, correspondingBase: SolarizedBaseNumber): RgbBaseStringMap;
+export function createBasesFromColor(nonBaseColor: any, correspondingBase: SolarizedBaseNumber): RgbBaseStringMap {
   const baseRgb = rgb[correspondingBase];
   const base03 = getRgbDifference(nonBaseColor, getRgbDifference(baseRgb, rgb.base03));
   const base02 = getRgbDifference(nonBaseColor, getRgbDifference(baseRgb, rgb.base02));

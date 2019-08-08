@@ -1,0 +1,23 @@
+{
+  "name": "solarizer",
+  "version": "1.0.0",
+  "description": "A utility with the ability to convert any RGB/HEX color into a Solarized-style theme by mimicking the color differences found in the Solarized \"Base\" colors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/champgm/solarizer.git"
+  },
+  "keywords": [
+    "solarized",
+    "colors"
+  ],
+  "author": "champgm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/champgm/solarizer/issues"
+  },
+  "homepage": "https://github.com/champgm/solarizer#readme"
+}
