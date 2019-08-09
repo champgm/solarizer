@@ -46,13 +46,16 @@ Then later...
 
 ```
 The result will look something like this:
-<img src="https://raw.github.com/champgm/solarizer/master/buttons.png?sanitize=true">
+
+![solarized buttons](https://github.com/champgm/solarizer/raw/master/buttons.png)
 
 
 ## Details
 Using an initial color and the known RGB differences between "Base" colors in the Solarized theme:
-<img src="https://raw.github.com/champgm/solarizer/master/solarized.png?sanitize=true">
+
+![solarized base colors](https://github.com/champgm/solarizer/raw/master/solarized.png)
+
 We can choose a point in the Base range to use the initial color and then calculate Solarized-esque values for other Base values.
 
-This is a very naive approach (see [Color Difference](https://en.wikipedia.org/wiki/Color_difference)) but it seems to work pretty well for coloring UI buttons, etc. 
+This is a very naive approach (see [Color Difference](https://en.wikipedia.org/wiki/Color_difference)) but it seems to work pretty well for coloring UI buttons, etc.
 
