@@ -1,0 +1,35 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "curly": true,
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "no-console": false,
+    "interface-name": false,
+    "max-line-length": [
+      true,
+      200
+    ],
+    "import-name": false,
+    "strictNullChecks": false,
+    "whitespace": false,
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "ordered-imports": true,
+    "object-literal-sort-keys": [
+      true,
+      "ignore-case",
+      "locale-compare",
+      "shorthand-first"
+    ]
+  }
+}
