@@ -1,14 +1,14 @@
 # solarizer
-A utility which contains the default hexadecimal and RGB values for [Solarized](https://ethanschoonover.com/solarized/) color values as well as the ability to convert any RGB color into a solarized-style theme by mimicking the color differences found in the "Base" colors.
+A utility which contains the default hexadecimal and RGB values for [Solarized](https://ethanschoonover.com/solarized/) color values as well as the ability to convert colors into a solarized-style theme by mimicking the color differences found in the "Base" colors.
 
 ## Installation
 `npm install --save solarizer`
 
 ## Usage
-Here's an example of how one might create some solarized [react-native-really-awesome-button](https://github.com/rcaferati/react-native-really-awesome-button) buttons.
+Here's an example of how one might create some solarized [react-native-really-awesome-button](https://github.com/rcaferati/react-native-really-awesome-button)s.
 
 ```Typescript
-import { createBasesFromColor, rgb, rgbStrings as bases } from "./colors/Solarizer";
+import { createBasesFromColor, rgb, rgbStrings as bases } from "solarizer";
 
 const blue = createBasesFromColor(rgb.blue, "base01");
 const red = createBasesFromColor(rgb.red, "base01");
@@ -54,5 +54,5 @@ Using an initial color and the known RGB differences between "Base" colors in th
 <img src="https://raw.github.com/champgm/solarizer/master/solarized.png?sanitize=true">
 We can choose a point in the Base range to use the initial color and then calculate Solarized-esque values for other Base values.
 
-This is a very naive approach (see [Color Difference](https://en.wikipedia.org/wiki/Color_difference)) but it 
+This is a very naive approach (see [Color Difference](https://en.wikipedia.org/wiki/Color_difference)) but it seems to work pretty well for coloring UI buttons, etc. 
 
