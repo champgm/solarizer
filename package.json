@@ -1,6 +1,6 @@
 {
   "name": "solarizer",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A utility with the ability to convert RGB/HEX colors into a Solarized-style theme by mimicking the color differences found in the Solarized \"Base\" colors.",
   "main": "tsc-out/index.js",
   "scripts": {

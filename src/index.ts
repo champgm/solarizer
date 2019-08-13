@@ -56,7 +56,7 @@ export const rgbStrings: RgbColorStringMap & RgbBaseStringMap = {
  */
 export function createBasesFromColor(nonBaseColor: RgbColor | string, correspondingBase: SolarizedBaseNumber): RgbBaseStringMap {
   const nonBase = typeof nonBaseColor === "string"
-    ? getRgbFromHexString(nonBaseColor)
+    ? getRgbFromString(nonBaseColor)
     : nonBaseColor;
   const baseRgb = rgb[correspondingBase];
   const base0 = getRgbDifference(nonBase, getRgbDifference(baseRgb, rgb.base0));
@@ -99,21 +99,32 @@ export function createBasesFromColor(nonBaseColor: RgbColor | string, correspond
  * @param subtrahendRgb The target color from which a difference should be calculated
  */
 export function getRgbDifference(minuendRgb: RgbColor, subtrahendRgb: RgbColor): RgbColor {
-  return [
+  const rgbDifference = [
     minuendRgb[0] - subtrahendRgb[0],
     minuendRgb[1] - subtrahendRgb[1],
     minuendRgb[2] - subtrahendRgb[2],
   ];
+  return rgbDifference as RgbColor;
 }
 
 /**
- * Converts a hex string (e.g. #000000) to an RGB array
+ * Converts a hex string (e.g. #000000) or rgb string (e.g. rgb(181,137,0)) to an RGB array
  * @param stringValue
  */
-export function getRgbFromHexString(stringValue: string): RgbColor {
+export function getRgbFromString(stringValue: string): RgbColor {
+
+  if (stringValue.substring(0, 3) === "rgb") {
+    let rgbString = stringValue.replace("rgb(", "");
+    rgbString = rgbString.replace(")", "");
+    return rgbString.split(",").map((rgOrb) => {
+      return parseInt(rgOrb.trim(), 10);
+    }) as RgbColor;
+  }
+
   const hex = stringValue.substring(0, 1) === "#"
     ? stringValue.substring(1)
     : stringValue;
+
   return [
     parseInt(hex.substring(0, 2), 16),
     parseInt(hex.substring(2, 4), 16),
